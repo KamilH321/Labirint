@@ -69,6 +69,10 @@ public class Menu{
 		int choice = in.nextInt();
 		if (choice == 1){
 			setLvl_num(1);
+			Game game = new Game();
+			if (getLvl_num() == 1){
+            	game.game_process(1, new Menu());
+        	}
 		}
 		else if (choice == 2){
 			setLvl_num(2);
