@@ -62,7 +62,7 @@ public class Menu{
 		System.out.println("<--------------------------------------->");
 		System.out.println("<                Уровни:                >");
 		System.out.println("<           1.Лёгкий уровень            >");
-		System.out.println("<           1.Средний уровень           >");
+		System.out.println("<           2.Средний уровень           >");
 		System.out.println("<           3.Сложный уровень           >");
 		System.out.println("<       4.Вернуться в главное меню      >");
 		System.out.println("<--------------------------------------->");
@@ -83,5 +83,27 @@ public class Menu{
 		else{
 			System.out.println("Неверная команда");
 		}
+	}
+
+	public void win_window(int count_str){
+		System.out.println("<--------------------------------------->");
+		System.out.println("<            Вы нашли выход             >");
+		System.out.println("<        Вы собрали " + count_str +" из 3 звёзд        >");
+		System.out.println("<                                       >");
+		System.out.println("<                                       >");
+		System.out.println("<   Желаете вернуться в главное меню?   >");
+		System.out.println("<           1 - Да, 2 - Нет             >");
+		System.out.println("<--------------------------------------->");
+	int choice = in.nextInt();
+	if (choice == 1){
+		clear.clear_console();
+		main_menu_window();
+	}
+	else if (choice == 2){
+		int x = 0;
+	}
+	else{
+		System.out.println("Неверная команда");
+	}
 	}
 }

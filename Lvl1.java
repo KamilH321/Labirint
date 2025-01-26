@@ -107,13 +107,13 @@ public class Lvl1{
 	 		setCor_strsXY3(-1, -1);
 	 	}
 	 }
-	
-	public void print_count_Stars(){
-	 	if (count_stars == 1){
-	 		System.out.println("You take: " + count_stars + " star");
-	 	}
-	 	else{
-	 		System.out.println("You take: " + count_stars + " stars");
-	 	}
+
+	public int check_ending(){
+		if (x == 1 && y == 0){
+			return 1;
+		}
+		else{
+			return 0;
+		}
 	}
 }
