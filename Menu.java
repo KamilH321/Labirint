@@ -19,6 +19,7 @@ public class Menu{
 		System.out.println("<           Выберете действие:          >");
 		System.out.println("<           1.Выбрать уровень           >");
 		System.out.println("<           2.Правила                   >");
+		System.out.println("<           3.Выйти                     >");
 		System.out.println("<--------------------------------------->");
 		int choice = in.nextInt();
 		if (choice == 1){
@@ -29,8 +30,13 @@ public class Menu{
 			clear.clear_console();
 			rules_window();
 		}
+		else if (choice == 3){
+			System.out.println("Пока пока!");
+		}
 		else{
+			clear.clear_console();
 			System.out.println("Неверная команда");
+			main_menu_window();
 		}
 	}
 
@@ -43,18 +49,17 @@ public class Menu{
 		System.out.println("<          кол-во звёзд, у лабиринта есть стенки, через котроые                >");
 		System.out.println("<          вы естественно не можете пройти. Чтобы выбрать уровень              >");
 		System.out.println("<          нужно вписать в консоль 1, 2 или 3. На этом всё, удачной игры!      >");
-		System.out.println("<          Хотите вернуться в стартовое меню? 1 - Да, 2 - Нет                  >");
+		System.out.println("<          Чтобы вернуться в главное меню введите 1.                           >");
 		System.out.println("<------------------------------------------------------------------------------>");
 		int choice = in.nextInt();
 		if (choice == 1){
 			clear.clear_console();
 			main_menu_window();
 		}
-		else if (choice == 2){
-			int x = 0;
-		}
 		else{
+			clear.clear_console();
 			System.out.println("Неверная команда");
+			rules_window();
 		}
 	}
 
@@ -85,7 +90,9 @@ public class Menu{
 			main_menu_window();
 		}
 		else{
+			clear.clear_console();
 			System.out.println("Неверная команда");
+			choice_lvl_window();
 		}
 	}
 
@@ -96,7 +103,7 @@ public class Menu{
 		System.out.println("<                                       >");
 		System.out.println("<                                       >");
 		System.out.println("<   Желаете вернуться в главное меню?   >");
-		System.out.println("<           1 - Да, 2 - Нет             >");
+		System.out.println("<     1 - Да, 2 - Следующий уровень     >");
 		System.out.println("<--------------------------------------->");
 	int choice = in.nextInt();
 	if (choice == 1){
@@ -107,7 +114,9 @@ public class Menu{
 		int x = 0;
 	}
 	else{
+		clear.clear_console();
 		System.out.println("Неверная команда");
+		win_window(count_str);
 	}
 	}
 }
