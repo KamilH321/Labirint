@@ -81,6 +81,10 @@ public class Menu{
 		}
 		else if (choice.equals("2")){
 			setLvl_num(2);
+			Game game = new Game();
+			if (getLvl_num() == 2){
+            	game.game_process(2, new Menu());
+        	}
 		}
 		else if (choice.equals("3")){
 			setLvl_num(3);
