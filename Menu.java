@@ -21,16 +21,16 @@ public class Menu{
 		System.out.println("<           2.Правила                   >");
 		System.out.println("<           3.Выйти                     >");
 		System.out.println("<--------------------------------------->");
-		int choice = in.nextInt();
-		if (choice == 1){
+		String choice = in.nextLine();
+		if (choice.equals("1")){
 			clear.clear_console();
 			choice_lvl_window();
 		}
-		else if (choice == 2){
+		else if (choice.equals("2")){
 			clear.clear_console();
 			rules_window();
 		}
-		else if (choice == 3){
+		else if (choice.equals("3")){
 			System.out.println("Пока пока!");
 		}
 		else{
@@ -51,8 +51,8 @@ public class Menu{
 		System.out.println("<          нужно вписать в консоль 1, 2 или 3. На этом всё, удачной игры!      >");
 		System.out.println("<          Чтобы вернуться в главное меню введите 1.                           >");
 		System.out.println("<------------------------------------------------------------------------------>");
-		int choice = in.nextInt();
-		if (choice == 1){
+		String choice = in.nextLine();
+		if (choice.equals("1")){
 			clear.clear_console();
 			main_menu_window();
 		}
@@ -71,21 +71,21 @@ public class Menu{
 		System.out.println("<           3.Сложный уровень           >");
 		System.out.println("<       4.Вернуться в главное меню      >");
 		System.out.println("<--------------------------------------->");
-		int choice = in.nextInt();
-		if (choice == 1){
+		String choice = in.nextLine();
+		if (choice.equals("1")){
 			setLvl_num(1);
 			Game game = new Game();
 			if (getLvl_num() == 1){
             	game.game_process(1, new Menu());
         	}
 		}
-		else if (choice == 2){
+		else if (choice.equals("2")){
 			setLvl_num(2);
 		}
-		else if (choice == 3){
+		else if (choice.equals("3")){
 			setLvl_num(3);
 		}
-		else if (choice == 4){
+		else if (choice.equals("4")){
 			clear.clear_console();
 			main_menu_window();
 		}
@@ -105,12 +105,12 @@ public class Menu{
 		System.out.println("<   Желаете вернуться в главное меню?   >");
 		System.out.println("<     1 - Да, 2 - Следующий уровень     >");
 		System.out.println("<--------------------------------------->");
-	int choice = in.nextInt();
-	if (choice == 1){
+	String choice = in.nextLine();
+	if (choice.equals("1")){
 		clear.clear_console();
 		main_menu_window();
 	}
-	else if (choice == 2){
+	else if (choice.equals("2")){
 		int x = 0;
 	}
 	else{
