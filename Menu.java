@@ -100,7 +100,7 @@ public class Menu{
 		}
 	}
 
-	public void win_window(int count_str){
+	public void win_window(int count_str, int lvl_num){
 		System.out.println("<--------------------------------------->");
 		System.out.println("<            Вы нашли выход             >");
 		System.out.println("<        Вы собрали " + count_str +" из 3 звёзд        >");
@@ -109,18 +109,45 @@ public class Menu{
 		System.out.println("<   Желаете вернуться в главное меню?   >");
 		System.out.println("<     1 - Да, 2 - Следующий уровень     >");
 		System.out.println("<--------------------------------------->");
-	String choice = in.nextLine();
-	if (choice.equals("1")){
-		clear.clear_console();
-		main_menu_window();
+		String choice = in.nextLine();
+		if (choice.equals("1")){
+			clear.clear_console();
+			main_menu_window();
+		}
+		else if (choice.equals("2")){
+			Game game = new Game();
+			if (lvl_num == 1){
+				game.game_process(2, new Menu());
+			}
+			else if (lvl_num == 2){
+				game.game_process(1, new Menu());
+			}
+		}
+		else{
+			clear.clear_console();
+			System.out.println("Неверная команда");
+			win_window(count_str, lvl_num);
+		}
 	}
-	else if (choice.equals("2")){
-		int x = 0;
-	}
-	else{
-		clear.clear_console();
-		System.out.println("Неверная команда");
-		win_window(count_str);
-	}
+
+	public void lose_window(int count_str){
+		System.out.println("<--------------------------------------->");
+		System.out.println("<              Вы проиграли             >");
+		System.out.println("<        Вы собрали " + count_str +" из 3 звёзд        >");
+		System.out.println("<                                       >");
+		System.out.println("<                                       >");
+		System.out.println("<   Желаете вернуться в главное меню?   >");
+		System.out.println("<                 1 - Да                >");
+		System.out.println("<--------------------------------------->");
+		String choice = in.nextLine();
+		if (choice.equals("1")){
+			clear.clear_console();
+			main_menu_window();
+		}
+		else{
+			clear.clear_console();
+			System.out.println("Неверная команда");
+			win_window(count_str, lvl_num);
+		}
 	}
 }

@@ -5,7 +5,6 @@ public class Game{
 	public void game_process(int num, Menu menu){
 		Scanner in = new Scanner(System.in);
 		ClearConsole clear = new ClearConsole();
-		// Lvl1 lvl1 = new Lvl1();
 		if (num == 1){
 			Level lvl1 = new Lvl1();
 			Moovment moov = new Moovment();
@@ -13,6 +12,7 @@ public class Game{
 			lvl1.print_map(lvl1.getLvl());
 			String step = "";
 			while(!step.equals("0") && lvl1.check_ending(1, 0) == 0){
+				System.out.println("Вы можете сдаться, для этого введите 0");
 				step = in.next();
 				switch(step){
 					case "w":
@@ -37,8 +37,14 @@ public class Game{
 						break;
 				}
 			}
-			clear.clear_console();
-			menu.win_window(lvl1.getCount_Stars());
+			if (lvl1.getCount_Stars() == 0){
+				clear.clear_console();
+				menu.lose_window(lvl1.getCount_Stars());
+			}
+			else{
+				clear.clear_console();
+				menu.win_window(lvl1.getCount_Stars(), 1);
+			}
 		}
 		else if (num == 2){
 			Level lvl2 = new Lvl2();
@@ -46,7 +52,8 @@ public class Game{
 			lvl2.setLvl(lvl2.getLvl());
 			lvl2.print_map(lvl2.getLvl());
 			String step = "";
-			while(!step.equals("0") && lvl2.check_ending(11, 1) == 0){
+			while(!step.equals("0") && lvl2.check_ending(11, 9) == 0){
+				System.out.println("Вы можете сдаться, для этого введите 0");
 				step = in.next();
 				switch(step){
 					case "w":
@@ -71,8 +78,14 @@ public class Game{
 						break;
 				}
 			}
-			clear.clear_console();
-			menu.win_window(lvl2.getCount_Stars());
+			if (lvl2.getCount_Stars() == 0){
+				clear.clear_console();
+				menu.lose_window(lvl2.getCount_Stars());		
+			}
+			else{
+				clear.clear_console();
+				menu.win_window(lvl2.getCount_Stars(), 1);
+			}
 		}
 	}
 }
